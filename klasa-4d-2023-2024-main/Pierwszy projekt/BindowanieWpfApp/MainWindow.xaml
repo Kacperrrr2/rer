@@ -27,7 +27,7 @@
                  Name="textBoxSource"/>
 
         <TextBlock Text="Odświerzanie tytułu strony" FontSize="20"/>
-        <TextBox Text="{Binding ElementName=thisWindow,Path=Title,UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Text="{Binding ElementName=thisWindow,Path=Title,UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged"/>
 
         <TextBox Text="Komunikta z pola:" FontSize="30" FontWeight="Bold"/>
         <TextBox Text="{Binding ElementName=thisWindow,Path=SourceValue}"/>
