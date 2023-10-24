@@ -62,7 +62,7 @@ namespace BmiTaskk
             
             if (!float.TryParse(HeightStr, out float height))
             {
-                textBlockResult.Text = " Wysokość nie jest liczba";
+                textBlockResult.Text = "Wysokość nie jest liczba";
                 return;
             }
 
