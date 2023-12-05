@@ -11,6 +11,7 @@
 
     <Window.Resources>
         <converters:ColorComponentToColorSaturationPrecentageConverter x:Key="ColorComponentToColorSaturationPrecentageConverter"></converters:ColorComponentToColorSaturationPrecentageConverter>
+        <converters:DoublesToColorConventer x:Key="DoublesToColorConventer"></converters:DoublesToColorConventer>
     </Window.Resources>
         <StackPanel>
             <WrapPanel>
@@ -51,6 +52,16 @@
                     ,StringFormat=Procent nasycenia: {0:N2} %
                     ,Converter={StaticResource ColorComponentToColorSaturationPrecentageConverter}}"/>
         </WrapPanel>
-        </StackPanel>
+        <Button Content="Ustaw czerwony kolor" Click="Button_Click" Margin="20"/>
+        <Rectangle Width="100" Height="100">
+            <Rectangle.Fill>
+                <MultiBinding Converter="{StaticResource DoublesToColorConventer}">
+                    <Binding ElementName="thisWindow" Path="RedComponent" Mode="OneWay"/>
+                    <Binding ElementName="thisWindow" Path="GreenComponent" Mode="OneWay"/>
+                    <Binding ElementName="thisWindow" Path="BlueComponent" Mode="OneWay"/>
+                </MultiBinding>
+            </Rectangle.Fill>
+        </Rectangle>
+    </StackPanel>
 
 </Window>
